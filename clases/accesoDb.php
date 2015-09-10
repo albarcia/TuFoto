@@ -2,15 +2,15 @@
 //accesoDb.php
 
 	class AccesoDb{
-		// Esta clase es específica para trabajar con MySQL.
-		// Variable privada para guardar la cadena de conexión.
+		// Esta clase es especÃ­fica para trabajar con MySQL.
+		// Variable privada para guardar la cadena de conexiÃ³n.
 		private $strcon;
 		
 		function conectar(){
-			$host = 'db453227987.db.1and1.com';
-			$usuario = 'dbo453227987';
-			$contrasena = 'kortatu';
-			$baseDatos = 'db453227987';
+			$host = '********';
+			$usuario = '**********';
+			$contrasena = '*********';
+			$baseDatos = '*********';
 			
 			$this->strcon = new mysqli($host, $usuario, $contrasena, $baseDatos) or
 				die('Error de aplicaci&oacute;n: La conexi&oacute;n con la base de datos no se ha podido realizar.');
@@ -25,7 +25,7 @@
 			$resultado = $this->strcon->query($strSQL);
 			//$resultado = mysqli_query($this->strcon, $strSQL);
 			// Muestra el detalle del mensaje de error de MySQL.
-			// Esto no se debería dejar en una aplicación en producción.
+			// Esto no se deberÃ­a dejar en una aplicaciÃ³n en producciÃ³n.
 			if (!$resultado){
 				$msg = '<br>Consulta inv&aacute;lida: ' . mysql_error() . '<br>';
 				$msg .= 'SQL: ' . $strSQL;
